@@ -20,4 +20,4 @@ jobs:
 
       - run: npm publish --access public
         env:
-          NODE_AUTH_TOKEN: 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
+          NODE_AUTH_TOKEN: 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
