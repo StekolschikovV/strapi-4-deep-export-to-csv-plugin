@@ -3,21 +3,19 @@ name: Publish
 on: push
 
 jobs:
-  publish:
-    name: Publish plugin in npm
+  build:
     runs-on: ubuntu-latest
     steps:
-      -
-        name: Checkout
+      - name: Checkout
         uses: actions/checkout@v2
-
-      - uses: actions/setup-node@v1
+      - name: Setup Node
+        uses: actions/setup-node@v2
         with:
-          node-version: 16
-          registry-url: https://registry.npmjs.org/
-
-      - run: yarn install
-
-      - run: npm publish --access public
+          node-version: '16.x'
+          registry-url: 'https://registry.npmjs.org'
+      - name: Install dependencies and build 🔧
+        run: npm install && npm run build
+      - name: Publish package on NPM 📦
+        run: npm publish
         env:
-          NODE_AUTH_TOKEN: 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
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
