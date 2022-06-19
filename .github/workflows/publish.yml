@@ -15,7 +15,7 @@ jobs:
         with:
           node-version: 16
           registry-url: https://registry.npmjs.org/
-
+      - run: npm install -g npm
       - run: yarn install
 
       - run: npm publish --access public
