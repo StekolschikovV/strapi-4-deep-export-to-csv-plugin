@@ -1,6 +1,6 @@
 {
   "name": "strapi-4-deep-export-to-csv-plugin",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "This is a plugin for CSV export.",
   "strapi": {
     "displayName": "CSV Export",
